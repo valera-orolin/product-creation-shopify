@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "527de8ab34cee810612f3c504591cc49"
+name = "test"
+handle = "test-14850"
+application_url = "https://shades-representative-requests-advanced.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "matveyeva-test.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_files,read_products,write_files,write_products"
+
+[auth]
+redirect_urls = [
+  "https://shades-representative-requests-advanced.trycloudflare.com/auth/callback",
+  "https://shades-representative-requests-advanced.trycloudflare.com/auth/shopify/callback",
+  "https://shades-representative-requests-advanced.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
